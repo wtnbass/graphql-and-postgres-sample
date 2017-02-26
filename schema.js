@@ -30,6 +30,10 @@ const Post = new GraphQLObjectType({
     id: { type: GraphQLInt },
     title: { type: GraphQLString },
     body: { type: GraphQLString },
+    user: {
+      type: User,
+      resolve: (post) => post.getUser()
+    }
   }),
 })
 
