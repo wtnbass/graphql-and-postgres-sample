@@ -9,6 +9,7 @@
     "db:setup": "node ./scripts/setup"
   },
   "dependencies": {
+    "dataloader-sequelize": "^1.4.4",
     "express": "^4.14.1",
     "express-graphql": "^0.6.3",
     "faker": "^4.1.0",

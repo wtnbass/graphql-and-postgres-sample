@@ -5,7 +5,6 @@ const {
   GraphQLInt,
   GraphQLString,
 } = require('graphql');
-const Db = require('./db');
 
 const User = new GraphQLObjectType({
   name: 'user',
@@ -46,8 +45,8 @@ const Query = new GraphQLObjectType({
       args: {
         id: { type: GraphQLInt },
       },
-      resolve: (root, args, ctx)  => (
-        Db.models.user.findAll({where: args})
+      resolve: (root, args, {db})  => (
+        db.models.user.findAll({where: args})
       ),
     },
   }),
